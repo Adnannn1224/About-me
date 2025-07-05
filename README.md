@@ -18,10 +18,10 @@ A responsive, modern portfolio showcasing my projects, skills, and professional 
 
 ## 🌍 Live Demo  
 [![Netlify](https://img.shields.io/badge/View_Live_on-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://your-portfolio.netlify.app)  
-*(Replace with your actual URL after deployment)*
+
 
 ## 🔧 Installation (For Local Development)
 ```bash
-git clone https://github.com/your-username/portfolio.git
+git clone https://github.com/your-Adnannn1224/portfolio.git
 cd portfolio
 # Open index.html in browser
