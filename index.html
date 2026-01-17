@@ -1,1397 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adnan Ahmed - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: { primary: "#3b82f6", secondary: "#10b981" },
-            borderRadius: {
-              none: "0px",
-              sm: "4px",
-              DEFAULT: "8px",
-              md: "12px",
-              lg: "16px",
-              xl: "20px",
-              "2xl": "24px",
-              "3xl": "32px",
-              full: "9999px",
-              button: "8px",
-            },
-          },
-        },
-      };
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adnan Ahmed | Graphic Designer & Video Editor</title>
+    <meta name="description" content="Adnan Ahmed — Showcasing creative graphic design and dynamic video editing skills from Addis Ababa.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
     <style>
-      :where([class^="ri-"])::before { content: "\f3c2"; }
-      body {
-          font-family: 'Inter', sans-serif;
+        :root {
+            --bg: #f0f4f8;
+            --accent: #ff6b6b;
+            --gradient: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 50%, #4ecdc4 100%);
+            --text: #333;
+            --text-light: #666;
+            --card: #fff;
         }
-        body.dark-mode {
-            background-color: #1f2937;
-            color: #e5e7eb;
-        }
-        body.dark-mode .bg-white {
-            background-color: #374151;
-        }
-        body.dark-mode .text-gray-800 {
-            color: #e5e7eb;
-        }
-        body.dark-mode .bg-gray-100 {
-            background-color: #4b5563;
-        }
-      
-      .hero-section {
-          background-image: url('https://readdy.ai/api/search-image?query=modern%20professional%20workspace%20with%20subtle%20technology%20elements%2C%20clean%20desk%20with%20computer%2C%20soft%20gradient%20blue%20background%2C%20minimalist%20design%2C%20high-quality%20professional%20atmosphere%2C%20perfect%20for%20portfolio%20background%2C%20clean%20and%20elegant%2C%20with%20space%20for%20text%20on%20the%20left%20side&width=1920&height=800&seq=1&orientation=landscape');
-          background-size: cover;
-          background-position: center right;
-      }
-      input:focus, textarea:focus {
-          outline: none;
-          border-color: #3b82f6;
-      }
-      .typing::after {
-          content: "|";
-          animation: blink 1s infinite;
-      }
-      @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
-      }
-      .skill-card {
-          transition: all 0.3s ease;
-      }
-      .skill-card:hover {
-          transform: translateY(-5px);
-      }
-      .project-card {
-          transition: all 0.3s ease;
-      }
-      .project-card:hover {
-          transform: translateY(-5px);
-      }
-      .timeline-item::before {
-          content: "";
-          position: absolute;
-          left: -9px;
-          top: 0;
-          width: 18px;
-          height: 18px;
-          background-color: #3b82f6;
-          border-radius: 50%;
-          z-index: 1;
-      }
-      .timeline-item::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 1px;
-          height: 100%;
-          background-color: #e5e7eb;
-      }
-    </style>
-  </head>
-  <body class="bg-gray-50">
-    <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white shadow-sm">
-      <div
-        class="container mx-auto px-4 py-4 flex justify-between items-center"
-      >
-        <div class="flex items-center gap-3">
-          <div
-            class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold"
-          >
-            A
-          </div>
-          <h1 class="text-xl font-bold">Adnan Ahmed</h1>
-        </div>
-
-        <nav class="hidden md:flex items-center space-x-8">
-          <a
-            href="#home"
-            class="text-gray-800 hover:text-primary transition-colors"
-            >Home</a
-          >
-          <a
-            href="#skills"
-            class="text-gray-800 hover:text-primary transition-colors"
-            >Skills</a
-          >
-          <a
-            href="#projects"
-            class="text-gray-800 hover:text-primary transition-colors"
-            >Projects</a
-          >
-          <a
-            href="#education"
-            class="text-gray-800 hover:text-primary transition-colors"
-            >Education</a
-          >
-          <a
-            href="#contact"
-            class="text-gray-800 hover:text-primary transition-colors"
-            >Contact</a
-          >
-        </nav>
-
         
-          <a
-            href="#contact"
-            class="hidden md:block bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap"
-            >Contact Me</a
-          >
-          <button
-            id="mobile-menu-button"
-            class="md:hidden w-10 h-10 flex items-center justify-center"
-          >
-            <i class="ri-menu-line text-xl"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-        <div class="container mx-auto px-4 py-2">
-          <nav class="flex flex-col space-y-3 py-3">
-            <a
-              href="#home"
-              class="text-gray-800 hover:text-primary transition-colors py-2"
-              >Home</a
-            >
-            <a
-              href="#skills"
-              class="text-gray-800 hover:text-primary transition-colors py-2"
-              >Skills</a
-            >
-            <a
-              href="#projects"
-              class="text-gray-800 hover:text-primary transition-colors py-2"
-              >Projects</a
-            >
-            <a
-              href="#education"
-              class="text-gray-800 hover:text-primary transition-colors py-2"
-              >Education</a
-            >
-            <a
-              href="#contact"
-              class="text-gray-800 hover:text-primary transition-colors py-2"
-              >Contact</a
-            >
-          </nav>
-        </div>
-      </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero-section min-h-[600px] flex items-center">
-      <div class="container mx-auto px-4 w-full">
-        <div
-          class="max-w-2xl bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg"
-        >
-          <h2 class="text-4xl font-bold mb-2">
-            Information Systems Professional
-          </h2>
-          <div
-            class="text-xl font-medium text-primary mb-4 typing"
-            id="typing-text"
-          >
-            Web Developer | System Analyst | Database Expert
-          </div>
-          <p class="text-gray-700 mb-6">
-            I am Adnan Ahmed an Information Systems graduate from Werabe University with
-            expertise in web development, SQL, and financial system
-            applications. Passionate about Ethiopia's digital transformation
-            through secure, user-friendly systems.
-          </p>
-          <div class="flex flex-wrap gap-4">
-            <a
-              href="#contact"
-              class="bg-primary text-white px-6 py-3 !rounded-button shadow-md hover:shadow-lg transition-all whitespace-nowrap"
-            >
-              <i class="ri-mail-line mr-2"></i> Contact Me
-            </a>
-            <a
-              href="https://github.com/Adnannn1224/About-me/blob/main/Adnan%20CV%20(1).pdf"
-              class="bg-white text-primary border border-primary px-6 py-3 !rounded-button shadow-md hover:shadow-lg transition-all whitespace-nowrap"
-            >
-              <i class="ri-download-line mr-2"></i> Download CV
-            </a>
-          </div>
-          <div class="flex items-center gap-4 mt-8">
-            <div class="flex items-center gap-2 text-sm text-gray-600">
-              <div
-                class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100"
-              >
-                <i class="ri-map-pin-line"></i>
-              </div>
-              Addis Ababa, Ethiopia
-            </div>
-            <div class="flex items-center gap-2 text-sm text-gray-600">
-              <div
-                class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100"
-              >
-                <i class="ri-mail-line"></i>
-              </div>
-              adnanahmed17676@gmail.com
-            </div>
-            <div class="flex items-center gap-2 text-sm text-gray-600">
-              <div
-                class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100"
-              >
-                <i class="ri-phone-line"></i>
-              </div>
-              +251979877676
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl font-bold mb-4">Skills & Expertise</h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
-            My technical toolkit and professional capabilities that I bring to
-            every project
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Technical Skills -->
-          <div
-            class="skill-card bg-white p-6 rounded-lg shadow-md border border-gray-100"
-          >
-            <div
-              class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-primary mb-4"
-            >
-              <i class="ri-code-line text-xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-4">Programming</h3>
-
-            <div class="space-y-4">
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span class="text-sm font-medium">HTML/CSS</span>
-                  <span class="text-sm text-gray-500">90%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2">
-                  <div
-                    class="bg-primary h-2 rounded-full"
-                    style="width: 90%"
-                  ></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span class="text-sm font-medium">JavaScript</span>
-                  <span class="text-sm text-gray-500">75%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2">
-                  <div
-                    class="bg-primary h-2 rounded-full"
-                    style="width: 75%"
-                  ></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span class="text-sm font-medium">SQL</span>
-                  <span class="text-sm text-gray-500">85%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2">
-                  <div
-                    class="bg-primary h-2 rounded-full"
-                    style="width: 85%"
-                  ></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span class="text-sm font-medium">PHP</span>
-                  <span class="text-sm text-gray-500">70%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2">
-                  <div
-                    class="bg-primary h-2 rounded-full"
-                    style="width: 70%"
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tools & Technologies -->
-          <div
-            class="skill-card bg-white p-6 rounded-lg shadow-md border border-gray-100"
-          >
-            <div
-              class="w-12 h-12 flex items-center justify-center rounded-full bg-green-100 text-secondary mb-4"
-            >
-              <i class="ri-tools-line text-xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-4">Tools & Technologies</h3>
-
-            <div class="grid grid-cols-2 gap-3">
-              <div class="flex items-center gap-2 p-3 bg-gray-50 rounded-md">
-                <div class="w-8 h-8 flex items-center justify-center">
-                  <i class="ri-database-2-line text-primary"></i>
-                </div>
-                <span class="text-sm font-medium">MySQL</span>
-              </div>
-
-              <div class="flex items-center gap-2 p-3 bg-gray-50 rounded-md">
-                <div class="w-8 h-8 flex items-center justify-center">
-                  <i class="ri-git-branch-line text-primary"></i>
-                </div>
-                <span class="text-sm font-medium">Git</span>
-              </div>
-
-              <div class="flex items-center gap-2 p-3 bg-gray-50 rounded-md">
-                <div class="w-8 h-8 flex items-center justify-center">
-                  <i class="ri-code-box-line text-primary"></i>
-                </div>
-                <span class="text-sm font-medium">VS Code</span>
-              </div>
-
-              <div class="flex items-center gap-2 p-3 bg-gray-50 rounded-md">
-                <div class="w-8 h-8 flex items-center justify-center">
-                  <i class="ri-server-line text-primary"></i>
-                </div>
-                <span class="text-sm font-medium">XAMPP</span>
-              </div>
-
-              <div class="flex items-center gap-2 p-3 bg-gray-50 rounded-md">
-                <div class="w-8 h-8 flex items-center justify-center">
-                  <i class="ri-cloud-line text-primary"></i>
-                </div>
-                <span class="text-sm font-medium">AWS</span>
-              </div>
-
-              <div class="flex items-center gap-2 p-3 bg-gray-50 rounded-md">
-                <div class="w-8 h-8 flex items-center justify-center">
-                  <i class="ri-terminal-box-line text-primary"></i>
-                </div>
-                <span class="text-sm font-medium">Command Line</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Soft Skills -->
-          <div
-            class="skill-card bg-white p-6 rounded-lg shadow-md border border-gray-100"
-          >
-            <div
-              class="w-12 h-12 flex items-center justify-center rounded-full bg-purple-100 text-purple-600 mb-4"
-            >
-              <i class="ri-user-settings-line text-xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-4">Professional Skills</h3>
-
-            <div class="space-y-4">
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
-                >
-                  <i class="ri-team-line text-primary"></i>
-                </div>
-                <div>
-                  <h4 class="font-medium">Team Collaboration</h4>
-                  <p class="text-sm text-gray-600">
-                    Effective team player with strong communication
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
-                >
-                  <i class="ri-lightbulb-line text-primary"></i>
-                </div>
-                <div>
-                  <h4 class="font-medium">Problem Solving</h4>
-                  <p class="text-sm text-gray-600">
-                    Analytical approach to complex challenges
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
-                >
-                  <i class="ri-time-line text-primary"></i>
-                </div>
-                <div>
-                  <h4 class="font-medium">Time Management</h4>
-                  <p class="text-sm text-gray-600">
-                    Efficient prioritization and organization
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
-                >
-                  <i class="ri-user-voice-line text-primary"></i>
-                </div>
-                <div>
-                  <h4 class="font-medium">Communication</h4>
-                  <p class="text-sm text-gray-600">
-                    Clear and effective technical communication
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl font-bold mb-4">Featured Projects</h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
-            Showcasing my technical expertise and problem-solving capabilities
-            through real-world applications
-          </p>
-        </div>
-
-        <!-- Featured Project -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-16">
-          <div class="grid md:grid-cols-2">
-            <div class="p-8">
-              <div
-                class="inline-block px-3 py-1 bg-blue-100 text-primary text-sm font-medium rounded-full mb-4"
-              >
-                Featured Project
-              </div>
-              <h3 class="text-2xl font-bold mb-3">
-                Online Employee Saving and Credit Management System
-              </h3>
-              <p class="text-gray-600 mb-6">
-                A comprehensive web-based system developed for Werabe
-                Comprehensive and Specialized Hospital to manage employee
-                savings and loan processing. This system streamlines financial
-                operations, enhances security, and improves efficiency.
-              </p>
-
-              <div class="mb-6">
-                <h4 class="font-semibold mb-2">Key Features:</h4>
-                <ul class="space-y-2">
-                  <li class="flex items-start gap-2">
-                    <div
-                      class="w-5 h-5 flex items-center justify-center mt-0.5"
-                    >
-                      <i class="ri-check-line text-primary"></i>
-                    </div>
-                    <span
-                      >Secure user authentication and role-based access
-                      control</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <div
-                      class="w-5 h-5 flex items-center justify-center mt-0.5"
-                    >
-                      <i class="ri-check-line text-primary"></i>
-                    </div>
-                    <span>Real-time savings tracking and management</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <div
-                      class="w-5 h-5 flex items-center justify-center mt-0.5"
-                    >
-                      <i class="ri-check-line text-primary"></i>
-                    </div>
-                    <span
-                      >Automated loan processing and approval workflows</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <div
-                      class="w-5 h-5 flex items-center justify-center mt-0.5"
-                    >
-                      <i class="ri-check-line text-primary"></i>
-                    </div>
-                    <span>Comprehensive reporting and analytics dashboard</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="flex flex-wrap gap-2 mb-6">
-                <span
-                  class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full"
-                  >HTML</span
-                >
-                <span
-                  class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full"
-                  >CSS</span
-                >
-                <span
-                  class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full"
-                  >JavaScript</span
-                >
-                <span
-                  class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full"
-                  >PHP</span
-                >
-                <span
-                  class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full"
-                  >MySQL</span
-                >
-              </div>
-
-              <div class="flex flex-wrap gap-3">
-                <a
-                  href="https://github.com/Adnannn1224/About-me/blob/main/Adnan%20CV%20(1).pdf"
-                  class="inline-flex items-center gap-1 text-primary hover:underline"
-                >
-                  <i class="ri-github-fill"></i> View Code
-                </a>
-                <a
-                  href="https://github.com/Adnannn1224/About-me/blob/main/Adnan%20CV%20(1).pdf"
-                  class="inline-flex items-center gap-1 text-primary hover:underline"
-                >
-                  <i class="ri-external-link-line"></i> Live Demo
-                </a>
-                <div class="inline-flex items-center gap-1 text-green-600">
-                  <i class="ri-copyright-line"></i> Copyrighted (2025)
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-gray-100 flex items-center justify-center p-8">
-              <img
-                src="https://readdy.ai/api/search-image?query=modern%20financial%20management%20system%20dashboard%20with%20clean%20UI%2C%20showing%20savings%20tracking%2C%20loan%20management%20interface%2C%20professional%20design%20with%20blue%20accent%20colors%2C%20financial%20charts%20and%20graphs%2C%20employee%20data%20visualization&width=600&height=400&seq=2&orientation=landscape"
-                alt="Project Screenshot"
-                class="rounded-lg shadow-md max-w-full"
-              />
-            </div>
-          </div>
-        </div>
-
-        <!-- Other Projects -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Project 1 -->
-          <div
-            class="project-card bg-white rounded-lg shadow-md overflow-hidden"
-          >
-            <img
-              src="https://readdy.ai/api/search-image?query=e-commerce%20website%20interface%20with%20product%20catalog%2C%20shopping%20cart%2C%20and%20payment%20gateway%2C%20modern%20clean%20design%20with%20blue%20accent%20colors%2C%20responsive%20layout&width=400&height=250&seq=3&orientation=landscape"
-              alt="E-commerce Project"
-              class="w-full h-48 object-cover object-top"
-            />
-
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
-              <p class="text-gray-600 mb-4">
-                A responsive e-commerce website with product catalog, shopping
-                cart, and secure payment integration.
-              </p>
-
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full"
-                  >HTML/CSS</span
-                >
-                <span
-                  class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full"
-                  >JavaScript</span
-                >
-                <span
-                  class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full"
-                  >PHP</span
-                >
-                <span
-                  class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full"
-                  >MySQL</span
-                >
-              </div>
-
-              
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div
-            class="project-card bg-white rounded-lg shadow-md overflow-hidden"
-          >
-            <img
-              src="https://readdy.ai/api/search-image?query=inventory%20management%20system%20dashboard%20with%20stock%20tracking%2C%20supplier%20management%2C%20and%20order%20processing%2C%20professional%20UI%20with%20data%20visualization%20charts&width=400&height=250&seq=4&orientation=landscape"
-              alt="Inventory System"
-              class="w-full h-48 object-cover object-top"
-            />
-
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">
-                Inventory Management System
-              </h3>
-              <p class="text-gray-600 mb-4">
-                A comprehensive system for tracking inventory, managing
-                suppliers, and processing orders.
-              </p>
-
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full"
-                  >JavaScript</span
-                >
-                <span
-                  class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full"
-                  >Node.js</span
-                >
-                <span
-                  class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full"
-                  >Express</span
-                >
-                <span
-                  class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full"
-                  >MongoDB</span
-                >
-              </div>
-
-              
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div
-            class="project-card bg-white rounded-lg shadow-md overflow-hidden"
-          >
-            <img
-              src="https://readdy.ai/api/search-image?query=hospital%20management%20system%20with%20patient%20records%2C%20appointment%20scheduling%2C%20and%20medical%20staff%20management%2C%20clean%20medical%20interface%20with%20blue%20and%20white%20color%20scheme&width=400&height=250&seq=5&orientation=landscape"
-              alt="Hospital Management System"
-              class="w-full h-48 object-cover object-top"
-            />
-
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Hospital Management System</h3>
-              <p class="text-gray-600 mb-4">
-                A web application for managing patient records, appointments,
-                and medical staff schedules.
-              </p>
-
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full"
-                  >React</span
-                >
-                <span
-                  class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full"
-                  >Node.js</span
-                >
-                <span
-                  class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full"
-                  >Express</span
-                >
-                <span
-                  class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded-full"
-                  >MySQL</span
-                >
-              </div>
-
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl font-bold mb-4">Education & Certifications</h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
-            My academic background and professional certifications that form the
-            foundation of my expertise
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <!-- Education Timeline -->
-          <div>
-            <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-              <div
-                class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 text-primary"
-              >
-                <i class="ri-graduation-cap-line"></i>
-              </div>
-              Academic Journey
-            </h3>
-
-            <div class="relative pl-8 space-y-8">
-              <!-- Education Item 1 -->
-              <div class="timeline-item relative pb-8">
-                <div
-                  class="bg-white rounded-lg p-5 shadow-sm border border-gray-100"
-                >
-                  <div class="flex justify-between items-start mb-2">
-                    <h4 class="text-lg font-semibold">
-                      BSc in Information Systems
-                    </h4>
-                    <span class="text-sm text-gray-500">2021-2025</span>
-                  </div>
-                  <p class="text-primary font-medium mb-3">
-                    Werabe University, Ethiopia
-                  </p>
-                  <p class="text-gray-600 mb-4">
-                    Comprehensive program covering information systems
-                    development, database management, and software engineering
-                    principles.
-                  </p>
-
-                  <h5 class="font-medium mb-2">Key Courses:</h5>
-                  <div class="flex flex-wrap gap-2 mb-4">
-                    <span
-                      class="px-3 py-1 bg-blue-50 text-primary text-sm rounded-full"
-                      >Web Development</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-blue-50 text-primary text-sm rounded-full"
-                      >Database Management</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-blue-50 text-primary text-sm rounded-full"
-                      >Software Engineering</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-blue-50 text-primary text-sm rounded-full"
-                      >System Analysis</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-blue-50 text-primary text-sm rounded-full"
-                      >Data Structures</span
-                    >
-                  </div>
-
-                  <div class="bg-gray-50 p-3 rounded-md">
-                    <h5 class="font-medium mb-2">Final Project:</h5>
-                    <p class="text-gray-700">
-                      Developed a web-based Online Employee Saving and Credit
-                      Management System for Werabe Comprehensive and Specialized
-                      Hospital, earning university recognition and a copyright.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Education Item 2 -->
-              <div class="timeline-item relative">
-                <div
-                  class="bg-white rounded-lg p-5 shadow-sm border border-gray-100"
-                >
-                  <div class="flex justify-between items-start mb-2">
-                    <h4 class="text-lg font-semibold">High School Diploma</h4>
-                    <span class="text-sm text-gray-500">2017-2021</span>
-                  </div>
-                  <p class="text-primary font-medium mb-3">
-                    Chamo scondary school, Arbaminch
-                  </p>
-                  <p class="text-gray-600">
-                    Graduated with honors, specializing in Natural Sciences with
-                    a focus on Mathematics and Physics.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Certifications -->
-          <div>
-            <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-              <div
-                class="w-8 h-8 flex items-center justify-center rounded-full bg-green-100 text-secondary"
-              >
-                <i class="ri-award-line"></i>
-              </div>
-              Certifications & Achievements
-            </h3>
-
-            <div class="space-y-6">
-              <!-- Certification 1 -->
-              <div
-                class="bg-white rounded-lg p-5 shadow-sm border border-gray-100"
-              >
-                <div class="flex items-start gap-4">
-                  <div
-                    class="w-12 h-12 flex items-center justify-center rounded-md bg-gray-100"
-                  >
-                    <i class="ri-amazon-line text-xl text-[#FF9900]"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="flex justify-between items-start">
-                      <h4 class="text-lg font-semibold">
-                        AWS Certified Cloud Practitioner
-                      </h4>
-                      <span class="text-sm text-gray-500">Expected 2025</span>
-                    </div>
-                    <p class="text-gray-600 mb-2">Amazon Web Services</p>
-                    <p class="text-sm text-gray-600">
-                      Foundational certification validating cloud fluency and
-                      basic AWS knowledge.
-                    </p>
-                    <div
-                      class="mt-3 inline-block px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-full"
-                    >
-                      In Progress
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Achievement 1 -->
-              <div
-                class="bg-white rounded-lg p-5 shadow-sm border border-gray-100"
-              >
-                <div class="flex items-start gap-4">
-                  <div
-                    class="w-12 h-12 flex items-center justify-center rounded-md bg-gray-100"
-                  >
-                    <i class="ri-copyright-line text-xl text-primary"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="flex justify-between items-start">
-                      <h4 class="text-lg font-semibold">
-                        Copyright Registration
-                      </h4>
-                      <span class="text-sm text-gray-500">2025</span>
-                    </div>
-                    <p class="text-gray-600 mb-2">
-                      Ethiopian Intellectual Property Office
-                    </p>
-                    <p class="text-sm text-gray-600">
-                      Official copyright for the Online Employee Saving and
-                      Credit Management System.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Achievement 2 -->
-              <div
-                class="bg-white rounded-lg p-5 shadow-sm border border-gray-100"
-              >
-                <div class="flex items-start gap-4">
-                  <div
-                    class="w-12 h-12 flex items-center justify-center rounded-md bg-gray-100"
-                  >
-                    <i class="ri-award-line text-xl text-primary"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="flex justify-between items-start">
-                      <h4 class="text-lg font-semibold">
-                        Academic Excellence Award
-                      </h4>
-                      <span class="text-sm text-gray-500">2024</span>
-                    </div>
-                    <p class="text-gray-600 mb-2">Werabe University</p>
-                    <p class="text-sm text-gray-600">
-                      Recognized for outstanding academic performance and
-                      innovative final project.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Achievement 3 -->
-              <div
-                class="bg-white rounded-lg p-5 shadow-sm border border-gray-100"
-              >
-                <div class="flex items-start gap-4">
-                  <div
-                    class="w-12 h-12 flex items-center justify-center rounded-md bg-gray-100"
-                  >
-                    <i class="ri-file-list-3-line text-xl text-primary"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="flex justify-between items-start">
-                      <h4 class="text-lg font-semibold">
-                        Faculty Recommendation
-                      </h4>
-                      <span class="text-sm text-gray-500">2025</span>
-                    </div>
-                    <p class="text-gray-600 mb-2">
-                      Department of Information Systems
-                    </p>
-                    <p class="text-sm text-gray-600">
-                      Received strong recommendation letters from faculty for
-                      innovation and technical excellence.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
-            I'm currently looking for new opportunities in web development and
-            software engineering. Let's connect!
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <!-- Contact Form -->
-          <div class="bg-white rounded-lg shadow-md p-8">
-            <h3 class="text-xl font-bold mb-6">Send Me a Message</h3>
-
-            <form id="contact-form">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label
-                    for="name"
-                    class="block text-sm font-medium text-gray-700 mb-1"
-                    >Name</label
-                  >
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20"
-                    placeholder="Your name"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="email"
-                    class="block text-sm font-medium text-gray-700 mb-1"
-                    >Email</label
-                  >
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20"
-                    placeholder="Your email"
-                  />
-                </div>
-              </div>
-
-              <div class="mb-6">
-                <label
-                  for="subject"
-                  class="block text-sm font-medium text-gray-700 mb-1"
-                  >Subject</label
-                >
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary/20"
-                  placeholder="Subject"
-                />
-              </div>
-
-              <div class="mb-6">
-                <label
-                  for="message"
-                  class="block text-sm font-medium text-gray-700 mb-1"
-                  >Message</label
-                >
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  class="w-full px-4 py-2 border border-gray-300 rounded resize-none focus:ring-2 focus:ring-primary/20"
-                  placeholder="Your message"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                class="w-full bg-primary text-white py-3 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
-              >
-                <i class="ri-send-plane-line mr-2"></i> Send Message
-              </button>
-            </form>
-          </div>
-
-          <!-- Contact Info -->
-          <div>
-            <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-              <h3 class="text-xl font-bold mb-6">Contact Information</h3>
-
-              <div class="space-y-6">
-                <div class="flex items-start gap-4">
-                  <div
-                    class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-primary"
-                  >
-                    <i class="ri-map-pin-line"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-medium">Location</h4>
-                    <p class="text-gray-600">Addis Ababa, Ethiopia</p>
-                  </div>
-                </div>
-
-                <div class="flex items-start gap-4">
-                  <div
-                    class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-primary"
-                  >
-                    <i class="ri-mail-line"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-medium">Email</h4>
-                    <a
-                      href="mailto:adnanahmed17676@gmail.com"
-                      class="text-gray-600 hover:text-primary"
-                      >adnanahmed17676@gmail.com</a
-                    >
-                  </div>
-                </div>
-
-                <div class="flex items-start gap-4">
-                  <div
-                    class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-primary"
-                  >
-                    <i class="ri-phone-line"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-medium">Phone</h4>
-                    <a
-                      href="tel:+251979877676"
-                      class="text-gray-600 hover:text-primary"
-                      >+251 979 877 676</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-md p-8">
-              <h3 class="text-xl font-bold mb-6">Connect With Me</h3>
-
-              <div class="flex flex-wrap gap-4">
-                <a
-                  href="https://www.linkedin.com/in/adnan-ahmed-03193332a"
-                  class="w-12 h-12 flex items-center justify-center rounded-full bg-[#0077B5] text-white hover:opacity-90 transition-opacity"
-                >
-                  <i class="ri-linkedin-fill"></i>
-                </a>
-                <a
-                  href="https://github.com/Adnannn1224"
-                  class="w-12 h-12 flex items-center justify-center rounded-full bg-[#333] text-white hover:opacity-90 transition-opacity"
-                >
-                  <i class="ri-github-fill"></i>
-                </a>
-                <a
-                  href="https://www.facebook.com/profile.php?id=100011226251677&mibextid=rS40aB7S9Ucbxw6v"
-                  class="w-12 h-12 flex items-center justify-center rounded-full bg-[#1DA1F2] text-white hover:opacity-90 transition-opacity"
-                >
-                  <i class="ri-twitter-fill"></i>
-                </a>
-                <a
-                  href="https://www.instagram.com/adnanahmed_247"
-                  class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-r from-[#405DE6] via-[#5851DB] via-[#833AB4] via-[#C13584] via-[#E1306C] via-[#FD1D1D] to-[#F56040] text-white hover:opacity-90 transition-opacity"
-                >
-                  <i class="ri-instagram-line"></i>
-                </a>
-              </div>
-
-              <div class="mt-8 p-4 bg-blue-50 rounded-lg">
-                <div class="flex items-center gap-3">
-                  <div
-                    class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-primary"
-                  >
-                    <i class="ri-time-line"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-medium">Availability</h4>
-                    <p class="text-gray-600">
-                      Available for full-time positions and freelance projects
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="mb-6 md:mb-0">
-            <h2 class="text-2xl font-bold mb-2">Adnan Ahmed</h2>
-            <p class="text-gray-400">Information Systems Professional</p>
-          </div>
-
-          <div class="flex flex-wrap gap-6 mb-6 md:mb-0">
-            <a
-              href="#home"
-              class="text-gray-400 hover:text-white transition-colors"
-              >Home</a
-            >
-            <a
-              href="#skills"
-              class="text-gray-400 hover:text-white transition-colors"
-              >Skills</a
-            >
-            <a
-              href="#projects"
-              class="text-gray-400 hover:text-white transition-colors"
-              >Projects</a
-            >
-            <a
-              href="#education"
-              class="text-gray-400 hover:text-white transition-colors"
-              >Education</a
-            >
-            <a
-              href="#contact"
-              class="text-gray-400 hover:text-white transition-colors"
-              >Contact</a
-            >
-          </div>
-
-          <div>
-            <a
-              href="https://github.com/Adnannn1224/About-me/blob/main/Adnan%20CV%20(1).pdf"
-              class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap"
-            >
-              <i class="ri-download-line mr-2"></i> Download CV
-            </a>
-          </div>
-        </div>
-
-        <div
-          class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
-        >
-          <p class="text-gray-400 mb-4 md:mb-0">
-            © 2025 Adnan Ahmed. All rights reserved.
-          </p>
-
-          <div class="flex gap-4">
-            <a
-              href="https://www.linkedin.com/in/adnan-ahmed-03193332a"
-              class="text-gray-400 hover:text-white transition-colors"
-            >
-              <i class="ri-linkedin-fill text-xl"></i>
-            </a>
-            <a
-              href="https://github.com/Adnannn1224"
-              class="text-gray-400 hover:text-white transition-colors"
-            >
-              <i class="ri-github-fill text-xl"></i>
-            </a>
-            <a
-              href="https://www.facebook.com/profile.php?id=100011226251677&mibextid=rS40aB7S9Ucbxw6v"
-              class="text-gray-400 hover:text-white transition-colors"
-            >
-              <i class="ri-twitter-fill text-xl"></i>
-            </a>
-            <a
-              href="#"
-              class="text-gray-400 hover:text-white transition-colors"
-            >
-              <i class="ri-instagram-line text-xl"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button
-      id="back-to-top"
-      class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all"
-    >
-      <i class="ri-arrow-up-line text-xl"></i>
-    </button>
-
-    <!-- Scripts -->
-    <script id="mobile-menu-script">
-      document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuButton = document.getElementById("mobile-menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        mobileMenuButton.addEventListener("click", function () {
-          mobileMenu.classList.toggle("hidden");
-        });
-
-        // Close mobile menu when clicking on a link
-        const mobileLinks = mobileMenu.querySelectorAll("a");
-        mobileLinks.forEach((link) => {
-          link.addEventListener("click", function () {
-            mobileMenu.classList.add("hidden");
-          });
-        });
-      });
-    </script>
-
-    <script id="theme-toggle-script">
-      document.addEventListener("DOMContentLoaded", function () {
-        const themeToggle = document.getElementById("theme-toggle");
-        const icon = themeToggle.querySelector("i");
-        let isDarkMode = false;
-
-        themeToggle.addEventListener("click", function () {
-          isDarkMode = !isDarkMode;
-
-          if (isDarkMode) {
-            document.documentElement.classList.add("dark");
-            icon.classList.remove("ri-sun-line");
-            icon.classList.add("ri-moon-line");
-          } else {
-            document.documentElement.classList.remove("dark");
-            icon.classList.remove("ri-moon-line");
-            icon.classList.add("ri-sun-line");
-          }
-        });
-      });
-    </script>
-
-    <script id="typing-effect-script">
-      document.addEventListener("DOMContentLoaded", function () {
-        const typingElement = document.getElementById("typing-text");
-        const texts = [
-          "Web Developer",
-          "System Analyst",
-          "Database Expert",
-          "Information Systems Professional",
-        ];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typingSpeed = 100;
-
-        function type() {
-          const currentText = texts[textIndex];
-
-          if (isDeleting) {
-            typingElement.textContent = currentText.substring(0, charIndex - 1);
-            charIndex--;
-            typingSpeed = 50;
-          } else {
-            typingElement.textContent = currentText.substring(0, charIndex + 1);
-            charIndex++;
-            typingSpeed = 100;
-          }
-
-          if (!isDeleting && charIndex === currentText.length) {
-            isDeleting = true;
-            typingSpeed = 1000; // Pause at end
-          } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            textIndex = (textIndex + 1) % texts.length;
-            typingSpeed = 500; // Pause before typing next
-          }
-
-          setTimeout(type, typingSpeed);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        setTimeout(type, 1000);
-      });
-    </script>
-
-    <script id="back-to-top-script">
-      document.addEventListener("DOMContentLoaded", function () {
-        const backToTopButton = document.getElementById("back-to-top");
-
-        window.addEventListener("scroll", function () {
-          if (window.scrollY > 300) {
-            backToTopButton.classList.remove("opacity-0", "invisible");
-            backToTopButton.classList.add("opacity-100", "visible");
-          } else {
-            backToTopButton.classList.remove("opacity-100", "visible");
-            backToTopButton.classList.add("opacity-0", "invisible");
-          }
-        });
-
-        backToTopButton.addEventListener("click", function () {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-        });
-      });
-    </script>
-
-    <script id="contact-form-script">
-      document.addEventListener("DOMContentLoaded", function () {
-        const contactForm = document.getElementById("contact-form");
-
-        contactForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          // Get form values
-          const name = document.getElementById("name").value;
-          const email = document.getElementById("email").value;
-          const subject = document.getElementById("subject").value;
-          const message = document.getElementById("message").value;
-
-          // Basic validation
-          if (!name || !email || !message) {
-            alert("Please fill in all required fields");
-            return;
-          }
-
-          // Here you would normally send the form data to a server
-          // For demo purposes, we'll just show an alert
-          alert("Thank you for your message! I will get back to you soon.");
-          contactForm.reset();
-        });
-      });
-    </script>
-
-    <script id="smooth-scroll-script">
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute("href");
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-              window.scrollTo({
-                top: targetElement.offsetTop - 80, // Adjust for header height
-                behavior: "smooth",
-              });
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+        
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        /* Hero */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .hero-tagline {
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: var(--gradient);
+            color: #fff;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,107,107,0.3);
+        }
+        
+        /* Section */
+        section {
+            padding: 8rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* About */
+        #about {
+            background: #fff;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+        }
+        
+        .about-img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Graphics Portfolio */
+        .graphics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .graphic-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+        }
+        
+        .graphic-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .graphic-img {
+            width: 100%;
+            display: block;
+        }
+        
+        .graphic-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.4s;
+        }
+        
+        .graphic-card:hover .graphic-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Video Section */
+        .video-display {
+            text-align: center;
+            background: #fff;
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .video-thumbnail {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+        
+        .tiktok-link {
+            font-size: 1.2rem;
+            color: var(--accent);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .tiktok-link:hover {
+            color: #ff4d4d;
+        }
+        
+        /* Contact */
+        #contact {
+            text-align: center;
+            background: var(--gradient);
+            color: #fff;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
-          });
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Adnan Ahmed</div>
+                <div class="nav-links">
+                    <a href="#hero">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#graphics">Graphics</a>
+                    <a href="#videos">Videos</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeIn">
+                <h1 class="hero-title">Adnan Ahmed</h1>
+                <p class="hero-tagline">Graphic Designer & Video Editor from Addis Ababa</p>
+                <a href="#graphics" class="btn btn-primary">Explore My Work</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <img src="images/about-photo.jpg" alt="Adnan Ahmed" class="about-img">
+                <div>
+                    <p>Hi, I'm Adnan Ahmed, a passionate graphic designer and video editor based in Addis Ababa, Ethiopia. With a keen eye for aesthetics and a love for storytelling, I create visually stunning designs and engaging videos that captivate audiences.</p>
+                    <p>My skills span from logo design and branding to dynamic video edits for social media. I'm dedicated to bringing ideas to life with creativity and precision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Graphic Design -->
+    <section id="graphics" style="background: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Graphic Design Portfolio</h2>
+            <div class="graphics-grid">
+                <div class="graphic-card">
+                    <img src="images/graphic-design-1.jpg" alt="Graphic Design 1" class="graphic-img">
+                    <div class="graphic-overlay">Logo Design for Tech Startup</div>
+                </div>
+                <div class="graphic-card">
+                    <img src="images/graphic-design-2.jpg" alt="Graphic Design 2" class="graphic-img">
+                    <div class="graphic-overlay">Poster for Cultural Event</div>
+                </div>
+                <div class="graphic-card">
+                    <img src="images/graphic-design-3.jpg" alt="Graphic Design 3" class="graphic-img">
+                    <div class="graphic-overlay">Branding Package</div>
+                </div>
+                <div class="graphic-card">
+                    <img src="images/graphic-design-4.jpg" alt="Graphic Design 4" class="graphic-img">
+                    <div class="graphic-overlay">Social Media Graphics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Video Editing -->
+    <section id="videos">
+        <div class="container">
+            <h2 class="section-title">Video Editing Highlights</h2>
+            <div class="video-display">
+                <img src="images/video-thumbnail.jpg" alt="Video Editing Thumbnail" class="video-thumbnail">
+                <p>Check out my latest video edits on TikTok!</p>
+                <a href="https://www.tiktok.com/@your_tiktok_handle" target="_blank" class="tiktok-link">
+                    <i class="fab fa-tiktok"></i> Explore on TikTok
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title" style="-webkit-text-fill-color: #fff;">Get in Touch</h2>
+            <p>Let's collaborate on your next project!</p>
+            <div class="contact-links">
+                <a href="mailto:adnanahmed17676@gmail.com" class="contact-item"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://github.com/Adnannn124" target="_blank" class="contact-item"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://t.me/Afhas_1" target="_blank" class="contact-item"><i class="fab fa-telegram"></i> Telegram</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer style="text-align: center; padding: 2rem; color: var(--text-light);">
+        &copy; 2026 Adnan Ahmed. All rights reserved.
+    </footer>
+    
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
-      });
     </script>
-  </body>
+</body>
 </html>
