@@ -4,400 +4,612 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adnan Ahmed | Graphic Designer & Video Editor</title>
-    <meta name="description" content="Adnan Ahmed — Showcasing creative graphic design and dynamic video editing skills from Addis Ababa.">
+    <meta name="description" content="Adnan Ahmed — Cyberpunk / gaming aesthetic graphic design & video editing from Addis Ababa.">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
+
     <style>
         :root {
-            --bg: #f0f4f8;
-            --accent: #ff6b6b;
-            --gradient: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 50%, #4ecdc4 100%);
-            --text: #333;
-            --text-light: #666;
-            --card: #fff;
+            --bg: #0a0a14;
+            --card: #111122;
+            --text: #e0e0ff;
+            --text-light: #a0a0cc;
+            --gx-red: #fa1e4e;
+            --gx-purple: #a22e5a;
+            --gx-cyan: #00f0ff;
+            --gradient: linear-gradient(135deg, #fa1e4e 0%, #a22e5a 50%, #00f0ff 100%);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg);
             color: var(--text);
             overflow-x: hidden;
-            line-height: 1.7;
+            line-height: 1.6;
+            position: relative;
         }
-        
-        /* Container */
+
+        /* Subtle scanlines + grain */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0px,
+                transparent 2px,
+                rgba(255,30,80,0.04) 2px,
+                rgba(255,30,80,0.04) 4px
+            );
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.3;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: url('images/noise-texture.png') repeat; /* optional - add this file */
+            opacity: 0.07;
+            pointer-events: none;
+            z-index: 9998;
+            mix-blend-mode: overlay;
+        }
+
+        /* Matrix rain background (very subtle) */
+        .matrix-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(to bottom, transparent, rgba(0,240,255,0.03));
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .matrix-bg::before {
+            content: "010101 1010 0110 1001 111000 0101";
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            color: rgba(0,240,255,0.15);
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.1rem;
+            white-space: pre;
+            animation: fall 60s linear infinite;
+            text-shadow: 0 0 8px rgba(0,240,255,0.4);
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(300%); }
+        }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
-        
-        /* Header */
+
         header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(10,10,20,0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(250,30,78,0.2);
         }
-        
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 0;
+            padding: 1.4rem 0;
         }
-        
+
         .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.1rem;
             font-weight: 900;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(250,30,78,0.6);
         }
-        
+
         .nav-links a {
             color: var(--text-light);
             text-decoration: none;
-            margin-left: 2rem;
+            margin-left: 2.2rem;
             font-weight: 500;
+            position: relative;
             transition: color 0.3s;
         }
-        
-        .nav-links a:hover {
-            color: var(--accent);
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gx-red);
+            transition: width 0.4s;
+            box-shadow: 0 0 10px var(--gx-red);
         }
-        
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
         /* Hero */
         #hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/hero-background.jpg');
+            position: relative;
+            background: linear-gradient(rgba(10,10,20,0.7), rgba(10,10,20,0.85)), url('images/hero-background.jpg');
             background-size: cover;
             background-position: center;
-            color: #fff;
-            text-align: center;
         }
-        
+
         .hero-content {
-            max-width: 800px;
+            text-align: center;
+            max-width: 900px;
             margin: 0 auto;
         }
-        
-        .hero-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 4.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInDown 1s ease-out;
+
+        .glitch {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(3.8rem, 10vw, 7.5rem);
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 
+                0.05em 0 0 var(--gx-red),
+                -0.03em -0.04em 0 var(--gx-cyan),
+                0.02em 0.04em 0 var(--gx-purple);
+            animation: glitch 4s infinite;
         }
-        
+
+        @keyframes glitch {
+            0%   { text-shadow: 0.05em 0 0 var(--gx-red), -0.03em -0.04em 0 var(--gx-cyan); }
+            14%  { text-shadow: 0.05em 0 0 var(--gx-red), -0.03em -0.04em 0 var(--gx-cyan); }
+            15%  { text-shadow: -0.05em 0 0 var(--gx-cyan), 0.03em 0.04em 0 var(--gx-red); }
+            49%  { text-shadow: -0.05em 0 0 var(--gx-cyan), 0.03em 0.04em 0 var(--gx-red); }
+            50%  { text-shadow: 0.05em 0.04em 0 var(--gx-purple), -0.03em 0 0 var(--gx-red); }
+            99%  { text-shadow: 0.05em 0.04em 0 var(--gx-purple), -0.03em 0 0 var(--gx-red); }
+            100% { text-shadow: 0.05em 0 0 var(--gx-red), -0.03em -0.04em 0 var(--gx-cyan); }
+        }
+
         .hero-tagline {
-            font-size: 1.8rem;
-            margin-bottom: 3rem;
-            opacity: 0.9;
+            font-size: 1.6rem;
+            margin: 1.5rem 0 3rem;
+            color: var(--text-light);
+            text-shadow: 0 0 10px rgba(0,240,255,0.4);
         }
-        
+
         .btn {
-            padding: 1rem 2.5rem;
+            padding: 1rem 2.8rem;
+            border: none;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.4s;
             text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
         }
-        
+
         .btn-primary {
             background: var(--gradient);
-            color: #fff;
+            color: white;
+            box-shadow: 0 0 25px rgba(250,30,78,0.5);
         }
-        
+
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255,107,107,0.3);
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 0 40px rgba(250,30,78,0.7);
         }
-        
-        /* Section */
+
+        /* Sections */
         section {
-            padding: 8rem 0;
+            padding: 9rem 0 7rem;
         }
-        
+
         .section-title {
             text-align: center;
-            font-family: 'Poppins', sans-serif;
-            font-size: 3rem;
-            margin-bottom: 4rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.2rem;
+            margin-bottom: 4.5rem;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(250,30,78,0.4);
         }
-        
-        /* About */
-        #about {
-            background: #fff;
-        }
-        
-        .about-grid {
+
+        /* Cards */
+        .card-grid {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.2rem;
         }
-        
-        .about-img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        /* Graphics Portfolio */
-        .graphics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
+
         .graphic-card {
             position: relative;
             overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.4s;
+            border-radius: 14px;
+            background: var(--card);
+            border: 1px solid rgba(250,30,78,0.15);
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
-        
+
         .graphic-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transform: translateY(-12px) scale(1.03);
+            border-color: var(--gx-red);
+            box-shadow: 0 20px 50px rgba(250,30,78,0.35);
         }
-        
+
         .graphic-img {
             width: 100%;
             display: block;
+            transition: transform 0.6s;
         }
-        
+
+        .graphic-card:hover .graphic-img {
+            transform: scale(1.08);
+        }
+
         .graphic-overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0,0,0,0.6);
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-            transform: translateY(100%);
-            transition: transform 0.4s;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,10,20,0.9) 0%, transparent 60%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.8rem;
+            opacity: 0;
+            transition: opacity 0.4s;
         }
-        
+
         .graphic-card:hover .graphic-overlay {
-            transform: translateY(0);
+            opacity: 1;
         }
-        
-        /* Video Section */
-        .video-display {
+
+        /* Services */
+        #services {
+            background: rgba(15,15,30,0.6);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--card);
+            padding: 2.2rem;
+            border-radius: 12px;
             text-align: center;
-            background: #fff;
-            padding: 4rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 0 auto;
+            border: 1px solid rgba(0,240,255,0.12);
+            transition: all 0.4s;
         }
-        
-        .video-thumbnail {
-            width: 100%;
-            border-radius: 15px;
-            margin-bottom: 2rem;
+
+        .service-card:hover {
+            border-color: var(--gx-cyan);
+            box-shadow: 0 0 30px rgba(0,240,255,0.25);
         }
-        
-        .tiktok-link {
-            font-size: 1.2rem;
-            color: var(--accent);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.3s;
+
+        .service-card i {
+            font-size: 2.8rem;
+            color: var(--gx-red);
+            margin-bottom: 1.2rem;
         }
-        
-        .tiktok-link:hover {
-            color: #ff4d4d;
-        }
-        
-        /* Contact */
-        #contact {
-            text-align: center;
-            background: var(--gradient);
-            color: #fff;
-        }
-        
-        .contact-links {
+
+        /* Stats */
+        .stats {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
+            flex-wrap: wrap;
+            gap: 4rem;
+            margin: 5rem 0;
+            text-align: center;
         }
-        
-        .contact-item {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1rem;
+
+        .stat-item {
+            font-family: 'Orbitron', sans-serif;
         }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
+
+        .stat-number {
+            font-size: 3.5rem;
+            color: var(--gx-red);
+            text-shadow: 0 0 15px var(--gx-red);
         }
-        
+
+        /* Testimonials */
+        .testimonial {
+            max-width: 700px;
+            margin: 0 auto 5rem;
+            padding: 2rem;
+            background: rgba(250,30,78,0.08);
+            border-left: 5px solid var(--gx-red);
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        /* Video section remains almost same - just styled */
+        .video-display {
+            background: var(--card);
+            padding: 3.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(250,30,78,0.2);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Contact */
+        #contact {
+            background: linear-gradient(135deg, #0f0f1e, #1a0f1f);
+            text-align: center;
+        }
+
+        .contact-links a {
+            color: var(--text);
+            font-size: 1.4rem;
+            margin: 0 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: var(--gx-red);
+            transform: scale(1.2);
+        }
+
+        /* Back to top */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gx-red);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 0 20px rgba(250,30,78,0.5);
+            z-index: 999;
+        }
+
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 3rem;
-            }
-            .section-title {
-                font-size: 2.5rem;
-            }
+            .hero-title { font-size: 3.5rem; }
+            .section-title { font-size: 2.6rem; }
+            .stats { gap: 2.5rem; }
         }
     </style>
 </head>
 <body>
+
+    <div class="matrix-bg"></div>
+
     <!-- Header -->
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Adnan Ahmed</div>
+                <div class="logo">ADNAN AHMED</div>
                 <div class="nav-links">
-                    <a href="#hero">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#graphics">Graphics</a>
-                    <a href="#videos">Videos</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#hero">HOME</a>
+                    <a href="#about">ABOUT</a>
+                    <a href="#services">SERVICES</a>
+                    <a href="#graphics">GRAPHICS</a>
+                    <a href="#videos">VIDEOS</a>
+                    <a href="#contact">CONTACT</a>
                 </div>
             </nav>
         </div>
     </header>
-    
+
     <!-- Hero -->
     <section id="hero">
         <div class="container">
-            <div class="hero-content animate__animated animate__fadeIn">
-                <h1 class="hero-title">Adnan Ahmed</h1>
-                <p class="hero-tagline">Graphic Designer & Video Editor</p>
-                <a href="#graphics" class="btn btn-primary">Explore My Work</a>
+            <div class="hero-content">
+                <h1 class="glitch animate__animated animate__fadeIn">ADNAN AHMED</h1>
+                <p class="hero-tagline">GRAPHIC DESIGNER × VIDEO EDITOR × CYBERPUNK VIBES</p>
+                <a href="#graphics" class="btn btn-primary">ENTER THE PORTFOLIO</a>
             </div>
         </div>
     </section>
-    
+
     <!-- About -->
     <section id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <img src="images/about-photo.jpg" alt="Adnan Ahmed" class="about-img">
-                <div>
-                    <p>Hi, I'm Adnan Ahmed, a passionate graphic designer and video editor based Ethiopia. With a keen eye for aesthetics and a love for storytelling, I create visually stunning designs and engaging videos that captivate audiences.</p>
-                    <p>My skills span from logo design and branding to dynamic video edits for social media. I'm dedicated to bringing ideas to life with creativity and precision.</p>
-                </div>
+            <h2 class="section-title">WHO RUNS THIS MATRIX</h2>
+            <div style="max-width:800px; margin:0 auto; text-align:center; font-size:1.15rem; color:var(--text-light);">
+                <p>Creative mercenary from Addis Ababa. I design visuals that glitch expectations and edit videos that hit like a data spike.</p>
+                <p>Logos, posters, motion graphics, social media edits, brand identities — if it needs to look dangerously good, I'm your operator.</p>
             </div>
         </div>
     </section>
-    
-    <!-- Graphic Design -->
-    <section id="graphics" style="background: #f9f9f9;">
+
+    <!-- Services -->
+    <section id="services">
         <div class="container">
-            <h2 class="section-title">Graphic Design Portfolio</h2>
-            <div class="graphics-grid">
-                <div class="graphic-card">
-                    <img src="images/graphic-design-1.jpg" alt="Graphic Design 1" class="graphic-img">
-                    <div class="graphic-overlay">Poster Design</div>
+            <h2 class="section-title">WHAT I EXECUTE</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Logo & Brand Identity</h3>
+                    <p>From clean minimal to full neon chaos — memorable marks that scale.</p>
                 </div>
-                <div class="graphic-card">
-                    <img src="images/graphic-design-2.jpg" alt="Graphic Design 2" class="graphic-img">
-                    <div class="graphic-overlay">Poster Design</div>
+                <div class="service-card">
+                    <i class="fas fa-image"></i>
+                    <h3>Posters & Visuals</h3>
+                    <p>Event flyers, album art, social banners — high-impact graphics.</p>
                 </div>
-                <div class="graphic-card">
-                    <img src="images/graphic-design-3.jpg" alt="Graphic Design 3" class="graphic-img">
-                    <div class="graphic-overlay">Poster Design</div>
+                <div class="service-card">
+                    <i class="fas fa-video"></i>
+                    <h3>Video Editing & Motion</h3>
+                    <p>Reels, promos, YouTube edits, glitchy transitions, VFX layers.</p>
                 </div>
-                <div class="graphic-card">
-                    <img src="images/graphic-design-4.jpg" alt="Graphic Design 4" class="graphic-img">
-                    <div class="graphic-overlay">Poster Design</div>
+                <div class="service-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Gaming / Cyberpunk Assets</h3>
+                    <p>Stream overlays, emotes, thumbnails, VTuber assets.</p>
                 </div>
-                <div class="graphic-card">
-                    <img src="images/graphic-design-5.jpg" alt="Graphic Design 4" class="graphic-img">
-                    <div class="graphic-overlay">Poster Design</div>
-                </div>
-                <div class="graphic-card">
-                    <img src="images/graphic-design-6.jpg" alt="Graphic Design 4" class="graphic-img">
-                    <div class="graphic-overlay">Poster Design</div>
-                </div>
-
-
             </div>
         </div>
     </section>
-    
-    <!-- Video Editing -->
+
+    <!-- Stats -->
+    <div class="container">
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div>Projects Delivered</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div>Happy Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">∞</div>
+                <div>Glitch Levels</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Graphics -->
+    <section id="graphics" style="background:rgba(15,15,30,0.7);">
+        <div class="container">
+            <h2 class="section-title">GRAPHIC DESIGN EXECUTIONS</h2>
+            <div class="card-grid">
+                <div class="graphic-card">
+                    <img src="images/graphic-design-1.jpg" alt="Design 1" class="graphic-img">
+                    <div class="graphic-overlay"><h3>Poster Design</h3></div>
+                </div>
+                <div class="graphic-card">
+                    <img src="images/graphic-design-2.jpg" alt="Design 2" class="graphic-img">
+                    <div class="graphic-overlay"><h3>Poster Design</h3></div>
+                </div>
+                <div class="graphic-card">
+                    <img src="images/graphic-design-3.jpg" alt="Design 3" class="graphic-img">
+                    <div class="graphic-overlay"><h3>Poster Design</h3></div>
+                </div>
+                <div class="graphic-card">
+                    <img src="images/graphic-design-4.jpg" alt="Design 4" class="graphic-img">
+                    <div class="graphic-overlay"><h3>Poster Design</h3></div>
+                </div>
+                <div class="graphic-card">
+                    <img src="images/graphic-design-5.jpg" alt="Design 5" class="graphic-img">
+                    <div class="graphic-overlay"><h3>Poster Design</h3></div>
+                </div>
+                <div class="graphic-card">
+                    <img src="images/graphic-design-6.jpg" alt="Design 6" class="graphic-img">
+                    <div class="graphic-overlay"><h3>Poster Design</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos (unchanged structure, styled) -->
     <section id="videos">
         <div class="container">
-            <h2 class="section-title">Video Editing Highlights</h2>
+            <h2 class="section-title">VIDEO EDITING REELS</h2>
             <div class="video-display">
                 <img src="images/video-thumbnail.jpeg" alt="Video Editing Thumbnail" class="video-thumbnail">
-                <p>Check out my latest video edits on TikTok!</p>
-                <a href="https://www.tiktok.com/@nt7.ae?_r=1&_t=ZS-939NTpaLQ2i" target="_blank" class="tiktok-link">
-                    <i class="fab fa-tiktok"></i> Explore on TikTok
+                <p style="margin:1.5rem 0; font-size:1.2rem;">Latest cuts & glitch edits live on TikTok</p>
+                <a href="https://www.tiktok.com/@nt7.ae?_r=1&_t=ZS-939NTpaLQ2i" target="_blank" class="tiktok-link" style="font-size:1.4rem; color:var(--gx-red);">
+                    <i class="fab fa-tiktok"></i> ENTER TIKTOK GRID
                 </a>
             </div>
         </div>
     </section>
-    
-    <!-- Contact -->
-    <section id="contact">
+
+    <!-- Testimonials (new – impresses clients) -->
+    <section id="testimonials" style="background:rgba(10,10,20,0.8);">
         <div class="container">
-            <h2 class="section-title" style="-webkit-text-fill-color: #fff;">Get in Touch</h2>
-            <p>Let's collaborate on your next project!</p>
-            <div class="contact-links">
-                <a href="mailto:adnanahmed17676@gmail.com" class="contact-item"><i class="fas fa-envelope"></i> Email</a>
-                <a href="https://github.com/Adnannn124" target="_blank" class="contact-item"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://t.me/Afhas_1" target="_blank" class="contact-item"><i class="fab fa-telegram"></i> Telegram</a>
+            <h2 class="section-title">SIGNAL FROM CLIENTS</h2>
+            <div class="testimonial">
+                "Adnan turned our boring event poster into something that actually made people stop scrolling. Insane colors, perfect vibe."
+                <br><strong>— Event Organizer, Addis</strong>
+            </div>
+            <div class="testimonial">
+                "The video edits are next level — the transitions and effects made our promo go viral. 10/10 would hire again."
+                <br><strong>— Brand Owner</strong>
             </div>
         </div>
     </section>
-    
-    <footer style="text-align: center; padding: 2rem; color: var(--text-light);">
-        &copy; 2026 Adnan Ahmed. All rights reserved.
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">TRANSMIT MESSAGE</h2>
+            <p style="font-size:1.3rem; margin-bottom:2.5rem;">Ready to launch your next visual attack?</p>
+            <div class="contact-links">
+                <a href="mailto:adnanahmed17676@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/Adnannn124" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://t.me/Afhas_1" target="_blank"><i class="fab fa-telegram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align:center; padding:3rem 0; color:var(--text-light); font-size:0.9rem; border-top:1px solid rgba(250,30,78,0.1);">
+        © 2026 Adnan Ahmed — Running on neon & caffeine
     </footer>
-    
+
+    <!-- Back to top -->
+    <div id="back-to-top"><i class="fas fa-rocket"></i></div>
+
     <script>
-        // Smooth scrolling
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
+        });
+
+        // Back to top
+        const btn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        });
+
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
 </html>
-
-
-
