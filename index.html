@@ -3,28 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adnan Ahmed | Graphic Designer & Video Editor</title>
-    <meta name="description" content="Adnan Ahmed — Cyberpunk / gaming aesthetic graphic design & video editing from Addis Ababa.">
+    <title>Adnan Ahmed | IT Portfolio</title>
+    <meta name="description" content="Adnan Ahmed – Full-stack developer, UI/UX designer, systems architect">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
-    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <style>
         :root {
-            --bg: #0a0a14;
-            --card: #111122;
-            --text: #e0e0ff;
-            --text-light: #a0a0cc;
-            --gx-red: #fa1e4e;
-            --gx-purple: #a22e5a;
-            --gx-cyan: #00f0ff;
-            --gradient: linear-gradient(135deg, #fa1e4e 0%, #a22e5a 50%, #00f0ff 100%);
+            --bg: #0b0b0f;
+            --card: #111118;
+            --text: #e8e8ff;
+            --text-light: #a0a0c0;
+            --accent: #00eaff;
+            --accent-dark: #00aaff;
+            --gradient: linear-gradient(135deg, #00eaff 0%, #7b00ff 50%, #ffffff 100%);
+            --gradient-subtle: linear-gradient(135deg, rgba(0,234,255,0.08), rgba(123,0,255,0.06));
         }
 
         * {
@@ -37,66 +32,7 @@
             font-family: 'Inter', sans-serif;
             background: var(--bg);
             color: var(--text);
-            overflow-x: hidden;
-            line-height: 1.6;
-            position: relative;
-        }
-
-        /* Subtle scanlines + grain */
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: repeating-linear-gradient(
-                to bottom,
-                transparent 0px,
-                transparent 2px,
-                rgba(255,30,80,0.04) 2px,
-                rgba(255,30,80,0.04) 4px
-            );
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.3;
-        }
-
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: url('images/noise-texture.png') repeat; /* optional - add this file */
-            opacity: 0.07;
-            pointer-events: none;
-            z-index: 9998;
-            mix-blend-mode: overlay;
-        }
-
-        /* Matrix rain background (very subtle) */
-        .matrix-bg {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            background: linear-gradient(to bottom, transparent, rgba(0,240,255,0.03));
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .matrix-bg::before {
-            content: "010101 1010 0110 1001 111000 0101";
-            position: absolute;
-            top: -100%;
-            left: 0;
-            width: 100%;
-            color: rgba(0,240,255,0.15);
-            font-family: 'Roboto Mono', monospace;
-            font-size: 1.1rem;
-            white-space: pre;
-            animation: fall 60s linear infinite;
-            text-shadow: 0 0 8px rgba(0,240,255,0.4);
-        }
-
-        @keyframes fall {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(300%); }
+            line-height: 1.7;
         }
 
         .container {
@@ -111,9 +47,9 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(10,10,20,0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(250,30,78,0.2);
+            background: rgba(11,11,15,0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,234,255,0.08);
         }
 
         nav {
@@ -124,13 +60,11 @@
         }
 
         .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.1rem;
-            font-weight: 900;
+            font-family: 'Orbitron', monospace;
+            font-size: 1.9rem;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 15px rgba(250,30,78,0.6);
         }
 
         .nav-links a {
@@ -138,28 +72,11 @@
             text-decoration: none;
             margin-left: 2.2rem;
             font-weight: 500;
-            position: relative;
             transition: color 0.3s;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gx-red);
-            transition: width 0.4s;
-            box-shadow: 0 0 10px var(--gx-red);
-        }
-
         .nav-links a:hover {
-            color: #fff;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+            color: #ffffff;
         }
 
         /* Hero */
@@ -167,68 +84,60 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
+            text-align: center;
             position: relative;
-            background: linear-gradient(rgba(10,10,20,0.7), rgba(10,10,20,0.85)), url('images/hero-background.jpg');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(11,11,15,0.82), rgba(11,11,15,0.92)),
+                        url('images/hero-background.jpg') center/cover no-repeat fixed;
         }
 
         .hero-content {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
+            max-width: 860px;
+            padding: 2rem;
         }
 
-        .glitch {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(3.8rem, 10vw, 7.5rem);
+        .hero-title {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(3.8rem, 9vw, 7.2rem);
             font-weight: 900;
-            color: #fff;
-            text-shadow: 
-                0.05em 0 0 var(--gx-red),
-                -0.03em -0.04em 0 var(--gx-cyan),
-                0.02em 0.04em 0 var(--gx-purple);
-            animation: glitch 4s infinite;
+            background: linear-gradient(90deg, #ffffff, #00eaff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 6s linear infinite, fadeInDown 1.2s ease-out;
         }
 
-        @keyframes glitch {
-            0%   { text-shadow: 0.05em 0 0 var(--gx-red), -0.03em -0.04em 0 var(--gx-cyan); }
-            14%  { text-shadow: 0.05em 0 0 var(--gx-red), -0.03em -0.04em 0 var(--gx-cyan); }
-            15%  { text-shadow: -0.05em 0 0 var(--gx-cyan), 0.03em 0.04em 0 var(--gx-red); }
-            49%  { text-shadow: -0.05em 0 0 var(--gx-cyan), 0.03em 0.04em 0 var(--gx-red); }
-            50%  { text-shadow: 0.05em 0.04em 0 var(--gx-purple), -0.03em 0 0 var(--gx-red); }
-            99%  { text-shadow: 0.05em 0.04em 0 var(--gx-purple), -0.03em 0 0 var(--gx-red); }
-            100% { text-shadow: 0.05em 0 0 var(--gx-red), -0.03em -0.04em 0 var(--gx-cyan); }
+        @keyframes shine {
+            to { background-position: 200% center; }
         }
 
-        .hero-tagline {
-            font-size: 1.6rem;
-            margin: 1.5rem 0 3rem;
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin: 1.6rem 0 2.8rem;
             color: var(--text-light);
-            text-shadow: 0 0 10px rgba(0,240,255,0.4);
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .btn {
-            padding: 1rem 2.8rem;
+        .hero-btn {
+            padding: 1.1rem 3rem;
+            background: linear-gradient(135deg, #00eaff, #7b00ff);
+            color: white;
             border: none;
             border-radius: 50px;
             font-weight: 700;
+            font-size: 1.1rem;
             cursor: pointer;
-            transition: all 0.4s;
             text-decoration: none;
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 1px;
+            display: inline-block;
+            transition: all 0.4s;
+            box-shadow: 0 10px 30px rgba(0,234,255,0.25);
         }
 
-        .btn-primary {
-            background: var(--gradient);
-            color: white;
-            box-shadow: 0 0 25px rgba(250,30,78,0.5);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 0 40px rgba(250,30,78,0.7);
+        .hero-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0,234,255,0.4);
         }
 
         /* Sections */
@@ -238,378 +147,370 @@
 
         .section-title {
             text-align: center;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.2rem;
+            font-family: 'Orbitron', monospace;
+            font-size: 3.1rem;
             margin-bottom: 4.5rem;
-            background: var(--gradient);
+            background: linear-gradient(90deg, #ffffff, #00eaff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(250,30,78,0.4);
         }
 
-        /* Cards */
-        .card-grid {
+        /* Expertise – combined version */
+        #expertise {
+            background: var(--gradient-subtle);
+        }
+
+        .expertise-box {
+            background: var(--card);
+            border: 1px solid rgba(0,234,255,0.12);
+            border-radius: 16px;
+            padding: 3rem;
+            max-width: 980px;
+            margin: 0 auto;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+        }
+
+        .expertise-box h3 {
+            font-size: 2.1rem;
+            margin-bottom: 1.8rem;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .expertise-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.2rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            text-align: center;
         }
 
-        .graphic-card {
+        .feature-item {
+            padding: 1.6rem;
+            background: rgba(0,234,255,0.04);
+            border-radius: 12px;
+            border: 1px solid rgba(0,234,255,0.1);
+            transition: all 0.35s;
+        }
+
+        .feature-item:hover {
+            background: rgba(0,234,255,0.08);
+            border-color: #00eaff;
+            transform: translateY(-6px);
+        }
+
+        .feature-item i {
+            font-size: 2.4rem;
+            color: #00eaff;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: var(--card);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(0,234,255,0.08);
+            transition: all 0.45s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-14px);
+            border-color: #00eaff;
+            box-shadow: 0 25px 60px rgba(0,234,255,0.18);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 1.8rem;
+        }
+
+        .project-title {
+            font-size: 1.7rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .project-desc {
+            color: var(--text-light);
+            margin-bottom: 1.4rem;
+            font-size: 0.98rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
+
+        .tech-tag {
+            background: rgba(0,234,255,0.08);
+            color: #00eaff;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.88rem;
+        }
+
+        /* Design showcase */
+        .design-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .design-item {
             position: relative;
             overflow: hidden;
-            border-radius: 14px;
-            background: var(--card);
-            border: 1px solid rgba(250,30,78,0.15);
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            border-radius: 12px;
         }
 
-        .graphic-card:hover {
-            transform: translateY(-12px) scale(1.03);
-            border-color: var(--gx-red);
-            box-shadow: 0 20px 50px rgba(250,30,78,0.35);
-        }
-
-        .graphic-img {
+        .design-item img {
             width: 100%;
             display: block;
             transition: transform 0.6s;
         }
 
-        .graphic-card:hover .graphic-img {
+        .design-item:hover img {
             transform: scale(1.08);
         }
 
-        .graphic-overlay {
+        .design-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(10,10,20,0.9) 0%, transparent 60%);
+            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent 60%);
             display: flex;
             align-items: flex-end;
-            padding: 1.8rem;
+            padding: 1.5rem;
             opacity: 0;
             transition: opacity 0.4s;
         }
 
-        .graphic-card:hover .graphic-overlay {
+        .design-item:hover .design-overlay {
             opacity: 1;
         }
 
-        /* Services */
-        #services {
-            background: rgba(15,15,30,0.6);
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--card);
-            padding: 2.2rem;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid rgba(0,240,255,0.12);
-            transition: all 0.4s;
-        }
-
-        .service-card:hover {
-            border-color: var(--gx-cyan);
-            box-shadow: 0 0 30px rgba(0,240,255,0.25);
-        }
-
-        .service-card i {
-            font-size: 2.8rem;
-            color: var(--gx-red);
-            margin-bottom: 1.2rem;
-        }
-
-        /* Stats */
-        .stats {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 4rem;
-            margin: 5rem 0;
-            text-align: center;
-        }
-
-        .stat-item {
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            color: var(--gx-red);
-            text-shadow: 0 0 15px var(--gx-red);
-        }
-
-        /* Testimonials */
-        .testimonial {
-            max-width: 700px;
-            margin: 0 auto 5rem;
-            padding: 2rem;
-            background: rgba(250,30,78,0.08);
-            border-left: 5px solid var(--gx-red);
-            border-radius: 8px;
-            font-style: italic;
-        }
-
-        /* Video section remains almost same - just styled */
-        .video-display {
-            background: var(--card);
-            padding: 3.5rem;
-            border-radius: 16px;
-            border: 1px solid rgba(250,30,78,0.2);
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
+        .design-overlay h4 {
+            color: white;
+            font-size: 1.3rem;
         }
 
         /* Contact */
         #contact {
-            background: linear-gradient(135deg, #0f0f1e, #1a0f1f);
             text-align: center;
+            padding: 6rem 0;
         }
 
-        .contact-links a {
-            color: var(--text);
-            font-size: 1.4rem;
-            margin: 0 1.5rem;
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin: 2.5rem 0;
+            font-size: 1.8rem;
+        }
+
+        .social-links a {
+            color: var(--text-light);
             transition: all 0.3s;
         }
 
-        .contact-links a:hover {
-            color: var(--gx-red);
-            transform: scale(1.2);
+        .social-links a:hover {
+            color: #00eaff;
+            transform: translateY(-4px);
         }
 
-        /* Back to top */
-        #back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--gx-red);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s;
-            box-shadow: 0 0 20px rgba(250,30,78,0.5);
-            z-index: 999;
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-light);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.95rem;
         }
 
-        #back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title { font-size: 3.5rem; }
-            .section-title { font-size: 2.6rem; }
-            .stats { gap: 2.5rem; }
+        @media (max-width: 992px) {
+            .about-content, .expertise-features {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="matrix-bg"></div>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">ADNAN AHMED</div>
-                <div class="nav-links">
-                    <a href="#hero">HOME</a>
-                    <a href="#about">ABOUT</a>
-                    <a href="#services">SERVICES</a>
-                    <a href="#graphics">GRAPHICS</a>
-                    <a href="#videos">VIDEOS</a>
-                    <a href="#contact">CONTACT</a>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero -->
-    <section id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="glitch animate__animated animate__fadeIn">ADNAN AHMED</h1>
-                <p class="hero-tagline">GRAPHIC DESIGNER × VIDEO EDITOR × CYBERPUNK VIBES</p>
-                <a href="#graphics" class="btn btn-primary">ENTER THE PORTFOLIO</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">WHO RUNS THIS MATRIX</h2>
-            <div style="max-width:800px; margin:0 auto; text-align:center; font-size:1.15rem; color:var(--text-light);">
-                <p>Creative mercenary from Addis Ababa. I design visuals that glitch expectations and edit videos that hit like a data spike.</p>
-                <p>Logos, posters, motion graphics, social media edits, brand identities — if it needs to look dangerously good, I'm your operator.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services">
-        <div class="container">
-            <h2 class="section-title">WHAT I EXECUTE</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>Logo & Brand Identity</h3>
-                    <p>From clean minimal to full neon chaos — memorable marks that scale.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-image"></i>
-                    <h3>Posters & Visuals</h3>
-                    <p>Event flyers, album art, social banners — high-impact graphics.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-video"></i>
-                    <h3>Video Editing & Motion</h3>
-                    <p>Reels, promos, YouTube edits, glitchy transitions, VFX layers.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-gamepad"></i>
-                    <h3>Gaming / Cyberpunk Assets</h3>
-                    <p>Stream overlays, emotes, thumbnails, VTuber assets.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats -->
+<header>
     <div class="container">
-        <div class="stats">
-            <div class="stat-item">
-                <div class="stat-number">50+</div>
-                <div>Projects Delivered</div>
+        <nav>
+            <div class="logo">ADNAN AHMED</div>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#projects">Projects</a>
+                <a href="#design">Design</a>
+                <a href="#contact">Contact</a>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">20+</div>
-                <div>Happy Clients</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">∞</div>
-                <div>Glitch Levels</div>
+        </nav>
+    </div>
+</header>
+
+<section id="hero">
+    <div class="hero-content animate__animated animate__fadeIn">
+        <h1 class="hero-title">ADNAN AHMED</h1>
+        <p class="hero-subtitle">
+            Full-stack developer • UI/UX & Graphic Designer • Systems Architect
+        </p>
+        <a href="#projects" class="hero-btn">View My Work</a>
+    </div>
+</section>
+
+<section id="expertise">
+    <div class="container">
+        <h2 class="section-title animate__animated animate__fadeInDown">Core Capabilities</h2>
+        <div class="expertise-box animate__animated animate__fadeInUp">
+            <h3>End-to-End Digital Solutions</h3>
+            <div class="expertise-features">
+                <div class="feature-item">
+                    <i class="fas fa-code"></i>
+                    <h4>Full-Stack Development</h4>
+                    <p>Modern web & mobile applications with clean architecture</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-paint-brush"></i>
+                    <h4>UI/UX & Visual Design</h4>
+                    <p>Intuitive interfaces, branding, motion graphics</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-server"></i>
+                    <h4>Systems & Infrastructure</h4>
+                    <p>Database design, cloud deployment, secure architecture</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Security & Optimization</h4>
+                    <p>Authentication, performance tuning, scalable backends</p>
+                </div>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Graphics -->
-    <section id="graphics" style="background:rgba(15,15,30,0.7);">
-        <div class="container">
-            <h2 class="section-title">GRAPHIC DESIGN EXECUTIONS</h2>
-            <div class="card-grid">
-                <div class="graphic-card">
-                    <img src="images/graphic-design-1.jpg" alt="Design 1" class="graphic-img">
-                    <div class="graphic-overlay"><h3>Poster Design</h3></div>
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title animate__animated animate__fadeInDown">Selected Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card animate__animated animate__fadeInUp">
+                <!-- Put screenshot here -->
+                <img src="images/werabe-hospital-sacco.jpg" alt="Werabe Hospital SACCO" class="project-img">
+                <div class="project-info">
+                    <h3 class="project-title">Werabe Hospital Saving & Credit Association</h3>
+                    <p class="project-desc">Secure financial management system for hospital staff with savings tracking, loan processing, role-based access and automated reports.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">JWT</span>
+                    </div>
                 </div>
-                <div class="graphic-card">
-                    <img src="images/graphic-design-2.jpg" alt="Design 2" class="graphic-img">
-                    <div class="graphic-overlay"><h3>Poster Design</h3></div>
+            </div>
+
+            <div class="project-card animate__animated animate__fadeInUp" style="animation-delay:0.15s">
+                <!-- Put screenshot here -->
+                <img src="images/sweet-coffee-website.jpg" alt="Sweet Coffee" class="project-img">
+                <div class="project-info">
+                    <h3 class="project-title">Sweet Coffee Website</h3>
+                    <p class="project-desc">Elegant e-commerce platform for café with menu showcase, online ordering, admin dashboard and payment gateway integration.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Tailwind</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">Stripe</span>
+                    </div>
                 </div>
-                <div class="graphic-card">
-                    <img src="images/graphic-design-3.jpg" alt="Design 3" class="graphic-img">
-                    <div class="graphic-overlay"><h3>Poster Design</h3></div>
-                </div>
-                <div class="graphic-card">
-                    <img src="images/graphic-design-4.jpg" alt="Design 4" class="graphic-img">
-                    <div class="graphic-overlay"><h3>Poster Design</h3></div>
-                </div>
-                <div class="graphic-card">
-                    <img src="images/graphic-design-5.jpg" alt="Design 5" class="graphic-img">
-                    <div class="graphic-overlay"><h3>Poster Design</h3></div>
-                </div>
-                <div class="graphic-card">
-                    <img src="images/graphic-design-6.jpg" alt="Design 6" class="graphic-img">
-                    <div class="graphic-overlay"><h3>Poster Design</h3></div>
+            </div>
+
+            <div class="project-card animate__animated animate__fadeInUp" style="animation-delay:0.3s">
+                <!-- Put screenshot here -->
+                <img src="images/roommate-addis.jpg" alt="Roommate Addis" class="project-img">
+                <div class="project-info">
+                    <h3 class="project-title">Roommate Addis</h3>
+                    <p class="project-desc">Smart roommate matching platform with advanced filters, compatibility scoring, secure chat and location-based search.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Vue 3</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Pinia</span>
+                        <span class="tech-tag">Google Maps</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Videos (unchanged structure, styled) -->
-    <section id="videos">
-        <div class="container">
-            <h2 class="section-title">VIDEO EDITING REELS</h2>
-            <div class="video-display">
-                <img src="images/video-thumbnail.jpeg" alt="Video Editing Thumbnail" class="video-thumbnail">
-                <p style="margin:1.5rem 0; font-size:1.2rem;">Latest cuts & glitch edits live on TikTok</p>
-                <a href="https://www.tiktok.com/@nt7.ae?_r=1&_t=ZS-939NTpaLQ2i" target="_blank" class="tiktok-link" style="font-size:1.4rem; color:var(--gx-red);">
-                    <i class="fab fa-tiktok"></i> ENTER TIKTOK GRID
-                </a>
+<section id="design">
+    <div class="container">
+        <h2 class="section-title animate__animated animate__fadeInDown">Design Work</h2>
+        <div class="design-gallery">
+            <!-- Replace these with your actual designs -->
+            <div class="design-item">
+                <img src="images/design-01.jpg" alt="Design 1">
+                <div class="design-overlay"><h4>Mobile Banking App UI</h4></div>
+            </div>
+            <div class="design-item">
+                <img src="images/design-02.jpg" alt="Design 2">
+                <div class="design-overlay"><h4>Dashboard Interface</h4></div>
+            </div>
+            <div class="design-item">
+                <img src="images/design-03.jpg" alt="Design 3">
+                <div class="design-overlay"><h4>Brand Identity Kit</h4></div>
+            </div>
+            <div class="design-item">
+                <img src="images/design-04.jpg" alt="Design 4">
+                <div class="design-overlay"><h4>Landing Page Concept</h4></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Testimonials (new – impresses clients) -->
-    <section id="testimonials" style="background:rgba(10,10,20,0.8);">
-        <div class="container">
-            <h2 class="section-title">SIGNAL FROM CLIENTS</h2>
-            <div class="testimonial">
-                "Adnan turned our boring event poster into something that actually made people stop scrolling. Insane colors, perfect vibe."
-                <br><strong>— Event Organizer, Addis</strong>
-            </div>
-            <div class="testimonial">
-                "The video edits are next level — the transitions and effects made our promo go viral. 10/10 would hire again."
-                <br><strong>— Brand Owner</strong>
-            </div>
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title animate__animated animate__fadeInDown">Let's Connect</h2>
+        <div class="social-links">
+            <a href="mailto:adnanahmed17676@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://t.me/Afhas_1" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://instagram.com/adnanahmed_247" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
-    </section>
+        <p style="margin-top:2rem; color:var(--text-light);">Open for collaborations, freelance projects, or full-time opportunities.</p>
+    </div>
+</section>
 
-    <!-- Contact -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">TRANSMIT MESSAGE</h2>
-            <p style="font-size:1.3rem; margin-bottom:2.5rem;">Ready to launch your next visual attack?</p>
-            <div class="contact-links">
-                <a href="mailto:adnanahmed17676@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/Adnannn124" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://t.me/Afhas_1" target="_blank"><i class="fab fa-telegram"></i></a>
-            </div>
-        </div>
-    </section>
+<footer>
+    © 2026 Adnan Ahmed – Built with precision & creativity
+</footer>
 
-    <footer style="text-align:center; padding:3rem 0; color:var(--text-light); font-size:0.9rem; border-top:1px solid rgba(250,30,78,0.1);">
-        © 2026 Adnan Ahmed — Running on neon & caffeine
-    </footer>
-
-    <!-- Back to top -->
-    <div id="back-to-top"><i class="fas fa-rocket"></i></div>
-
-    <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
         });
+    });
+</script>
 
-        // Back to top
-        const btn = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) btn.classList.add('visible');
-            else btn.classList.remove('visible');
-        });
-
-        btn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
 </body>
 </html>
