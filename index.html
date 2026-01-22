@@ -139,7 +139,74 @@
             transform: translateY(-4px);
             box-shadow: 0 20px 50px rgba(0,234,255,0.4);
         }
+#about {
+    background: rgba(17,17,24,0.6);
+    padding: 10rem 0 8rem;
+}
 
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.about-photo-wrapper {
+    position: relative;
+}
+
+.about-photo {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 16px;
+    border: 3px solid rgba(0,234,255,0.18);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6),
+                0 0 0 1px rgba(0,234,255,0.1) inset;
+    transition: all 0.5s ease;
+}
+
+.about-photo:hover {
+    transform: scale(1.04);
+    box-shadow: 0 25px 60px rgba(0,234,255,0.25),
+                0 0 0 2px rgba(0,234,255,0.2) inset;
+}
+
+.about-text h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.about-text p {
+    font-size: 1.08rem;
+    margin-bottom: 1.4rem;
+    color: var(--text-light);
+}
+
+.about-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(0,234,255,0.06);
+    padding: 0.9rem 1.4rem;
+    border-radius: 50px;
+    border: 1px solid rgba(0,234,255,0.12);
+    font-size: 0.98rem;
+    color: #ffffff;
+}
+
+.highlight-item i {
+    color: #00eaff;
+    font-size: 1.3rem;
+}
         /* Sections */
         section {
             padding: 9rem 0 7rem;
@@ -348,6 +415,22 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* Mobile adjustment */
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .about-photo {
+        max-width: 320px;
+        margin: 0 auto 3rem;
+    }
+    
+    .about-highlights {
+        justify-content: center;
+    }
+}
     </style>
 </head>
 <body>
@@ -374,6 +457,48 @@
             Full-stack developer • UI/UX & Graphic Designer • Systems Architect
         </p>
         <a href="#projects" class="hero-btn">View My Work</a>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+        <h2 class="section-title animate__animated animate__fadeInDown">About Me</h2>
+        
+        <div class="about-grid animate__animated animate__fadeInUp">
+            <!-- Your photo goes here -->
+            <div class="about-photo-wrapper">
+                <img src="images/profile-adnan.jpg" alt="Adnan Ahmed" class="about-photo">
+            </div>
+            
+            <div class="about-text">
+                <h3>Hi, I'm Adnan Ahmed</h3>
+                <p>
+                    I'm a full-stack developer and IT specialist from Addis Ababa, passionate about building secure, scalable, and user-centered digital solutions.
+                </p>
+                <p>
+                    With hands-on experience in web application development, UI/UX design, systems architecture, and information systems management, I turn complex problems into clean, efficient, and visually appealing products — whether it's financial platforms for organizations or smart matching tools for everyday users.
+                </p>
+                <p>
+                    My goal is simple: create technology that works reliably behind the scenes and feels intuitive in front of the screen.
+                </p>
+                
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-code"></i>
+                        <span>Full-Stack & Frontend</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>UI/UX & Graphic Design</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-server"></i>
+                        <span>Systems & Cloud</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
