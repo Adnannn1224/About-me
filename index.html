@@ -704,6 +704,9 @@
             position: relative;
             overflow: hidden;
             height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .project-image img {
@@ -716,6 +719,83 @@
         .project-card:hover .project-image img {
             transform: scale(1.08);
         }
+
+        /* CSS-based project previews */
+        .project-preview {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.02) 0%, transparent 40%);
+        }
+
+        .project-preview-icon {
+            font-size: 3.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-preview-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Project-specific gradients */
+        .preview-erp {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0d1225 50%, #1a1f3a 100%);
+        }
+        .preview-erp .project-preview-icon { color: #4f8cff; }
+
+        .preview-hospital {
+            background: linear-gradient(135deg, #0d2818 0%, #0a1f12 50%, #0d2818 100%);
+        }
+        .preview-hospital .project-preview-icon { color: #34d399; }
+
+        .preview-hotel {
+            background: linear-gradient(135deg, #2a1a0d 0%, #1f150a 50%, #2a1a0d 100%);
+        }
+        .preview-hotel .project-preview-icon { color: #fbbf24; }
+
+        .preview-yango {
+            background: linear-gradient(135deg, #1a0d2a 0%, #120a1f 50%, #1a0d2a 100%);
+        }
+        .preview-yango .project-preview-icon { color: #a78bfa; }
+
+        .preview-jiji {
+            background: linear-gradient(135deg, #2a0d1a 0%, #1f0a12 50%, #2a0d1a 100%);
+        }
+        .preview-jiji .project-preview-icon { color: #f472b6; }
+
+        .preview-sacco {
+            background: linear-gradient(135deg, #0d1a2a 0%, #0a121f 50%, #0d1a2a 100%);
+        }
+        .preview-sacco .project-preview-icon { color: #38bdf8; }
+
+        .preview-roommate {
+            background: linear-gradient(135deg, #1a2a0d 0%, #121f0a 50%, #1a2a0d 100%);
+        }
+        .preview-roommate .project-preview-icon { color: #a3e635; }
 
         .project-overlay {
             position: absolute;
@@ -1694,7 +1774,10 @@
                 <!-- Project 1: Hagbes ERP System -->
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-image">
-                        <img src="images/hero-background.jpg" alt="Hagbes ERP System">
+                        <div class="project-preview preview-erp">
+                            <i class="fas fa-project-diagram project-preview-icon"></i>
+                            <span class="project-preview-label">Enterprise ERP</span>
+                        </div>
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://hagbes.com" target="_blank" class="project-link"><i class="fas fa-link"></i></a>
@@ -1718,7 +1801,10 @@
                 <!-- Project 2: Smart Hospital -->
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-image">
-                        <img src="images/design-01.jpg" alt="Smart Hospital & Research Center">
+                        <div class="project-preview preview-hospital">
+                            <i class="fas fa-hospital project-preview-icon"></i>
+                            <span class="project-preview-label">Healthcare System</span>
+                        </div>
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://demo.smart-hospital.in/site/login" target="_blank" class="project-link"><i class="fas fa-link"></i></a>
@@ -1741,7 +1827,10 @@
                 <!-- Project 3: ERP System -->
                 <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-image">
-                        <img src="images/werabe.jpg" alt="ERP System">
+                        <div class="project-preview preview-erp">
+                            <i class="fas fa-cogs project-preview-icon"></i>
+                            <span class="project-preview-label">Enterprise Resource Planning</span>
+                        </div>
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fas fa-link"></i></a>
@@ -1764,7 +1853,10 @@
                 <!-- Project 4: Hotel Management System -->
                 <div class="project-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="project-image">
-                        <img src="images/sweet-coffee-website.jpg" alt="Hotel Management System">
+                        <div class="project-preview preview-hotel">
+                            <i class="fas fa-hotel project-preview-icon"></i>
+                            <span class="project-preview-label">Hospitality Management</span>
+                        </div>
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fas fa-link"></i></a>
@@ -1787,7 +1879,10 @@
                 <!-- Project 5: Yango Mereq Tech -->
                 <div class="project-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="project-image">
-                        <img src="images/roommate-addis.jpg" alt="Yango Mereq Tech Developer">
+                        <div class="project-preview preview-yango">
+                            <i class="fas fa-rocket project-preview-icon"></i>
+                            <span class="project-preview-label">Tech Platform</span>
+                        </div>
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fas fa-link"></i></a>
@@ -1810,7 +1905,10 @@
                 <!-- Project 6: jiji Ethiopia Ecommerce -->
                 <div class="project-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="project-image">
-                        <img src="images/design-02.jpg" alt="jiji Ethiopia Ecommerce">
+                        <div class="project-preview preview-jiji">
+                            <i class="fas fa-shopping-cart project-preview-icon"></i>
+                            <span class="project-preview-label">E-Commerce Platform</span>
+                        </div>
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fas fa-link"></i></a>
@@ -1833,7 +1931,10 @@
                 <!-- Project 7: Werabe Hospital SACCO -->
                 <div class="project-card" data-aos="fade-up" data-aos-delay="700">
                     <div class="project-image">
-                        <img src="images/design-03.jpg" alt="Werabe Hospital SACCO">
+                        <div class="project-preview preview-sacco">
+                            <i class="fas fa-piggy-bank project-preview-icon"></i>
+                            <span class="project-preview-label">Financial Management</span>
+                        </div>
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="http://wru.edu.et" target="_blank" class="project-link"><i class="fas fa-link"></i></a>
@@ -1856,7 +1957,10 @@
                 <!-- Project 8: Roommate Addis -->
                 <div class="project-card" data-aos="fade-up" data-aos-delay="800">
                     <div class="project-image">
-                        <img src="images/roommate-addis.jpg" alt="Roommate Addis">
+                        <div class="project-preview preview-roommate">
+                            <i class="fas fa-home project-preview-icon"></i>
+                            <span class="project-preview-label">Matching Platform</span>
+                        </div>
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://roommateaddis.ct.ws/?i=1" target="_blank" class="project-link"><i class="fas fa-link"></i></a>
